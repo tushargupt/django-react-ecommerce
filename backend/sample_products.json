@@ -1,0 +1,142 @@
+[
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-cancelling wireless headphones with 30-hour battery life and crystal-clear sound quality. Perfect for music, calls, and travel.",
+      "price": "199.99",
+      "inventory_count": 50,
+      "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+      "category": "Electronics",
+      "created_at": "2024-01-01T10:00:00Z",
+      "updated_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Smart Fitness Watch",
+      "description": "Advanced fitness tracker with heart rate monitoring, GPS, sleep tracking, and 7-day battery life. Track your health and fitness goals.",
+      "price": "299.99",
+      "inventory_count": 30,
+      "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+      "category": "Electronics",
+      "created_at": "2024-01-01T10:05:00Z",
+      "updated_at": "2024-01-01T10:05:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "Organic Cotton T-Shirt",
+      "description": "Soft, comfortable organic cotton t-shirt available in multiple colors and sizes. Sustainable fashion that feels great.",
+      "price": "29.99",
+      "inventory_count": 100,
+      "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+      "category": "Clothing",
+      "created_at": "2024-01-01T10:10:00Z",
+      "updated_at": "2024-01-01T10:10:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Modern LED Desk Lamp",
+      "description": "Adjustable LED desk lamp with touch controls, USB charging port, and multiple brightness levels. Perfect for work and study.",
+      "price": "79.99",
+      "inventory_count": 25,
+      "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500",
+      "category": "Home",
+      "created_at": "2024-01-01T10:15:00Z",
+      "updated_at": "2024-01-01T10:15:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "JavaScript Programming Guide",
+      "description": "Comprehensive guide to modern JavaScript programming with ES6+, async/await, and best practices. From beginner to advanced.",
+      "price": "49.99",
+      "inventory_count": 40,
+      "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500",
+      "category": "Books",
+      "created_at": "2024-01-01T10:20:00Z",
+      "updated_at": "2024-01-01T10:20:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "name": "Wireless Phone Charger",
+      "description": "Fast 15W wireless charging pad compatible with all Qi-enabled devices. Sleek design with LED indicator and non-slip surface.",
+      "price": "39.99",
+      "inventory_count": 60,
+      "image_url": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",
+      "category": "Electronics",
+      "created_at": "2024-01-01T10:25:00Z",
+      "updated_at": "2024-01-01T10:25:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "name": "Ceramic Coffee Mug Set",
+      "description": "Set of 4 handcrafted ceramic coffee mugs with unique glazed finish. Microwave and dishwasher safe. Perfect for daily use.",
+      "price": "34.99",
+      "inventory_count": 75,
+      "image_url": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=500",
+      "category": "Home",
+      "created_at": "2024-01-01T10:30:00Z",
+      "updated_at": "2024-01-01T10:30:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "name": "Bluetooth Portable Speaker",
+      "description": "Compact waterproof Bluetooth speaker with 360-degree sound, 12-hour battery life, and built-in microphone for calls.",
+      "price": "89.99",
+      "inventory_count": 45,
+      "image_url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+      "category": "Electronics",
+      "created_at": "2024-01-01T10:35:00Z",
+      "updated_at": "2024-01-01T10:35:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "name": "Yoga Mat Premium",
+      "description": "High-quality non-slip yoga mat with excellent cushioning and durability. Eco-friendly materials, includes carrying strap.",
+      "price": "59.99",
+      "inventory_count": 35,
+      "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
+      "category": "Fitness",
+      "created_at": "2024-01-01T10:40:00Z",
+      "updated_at": "2024-01-01T10:40:00Z"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "name": "Stainless Steel Water Bottle",
+      "description": "Insulated stainless steel water bottle that keeps drinks cold for 24hrs or hot for 12hrs. BPA-free with leak-proof design.",
+      "price": "24.99",
+      "inventory_count": 80,
+      "image_url": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",
+      "category": "Home",
+      "created_at": "2024-01-01T10:45:00Z",
+      "updated_at": "2024-01-01T10:45:00Z"
+    }
+  }
+]

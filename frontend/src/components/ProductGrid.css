@@ -1,0 +1,742 @@
+.product-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filters-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.search-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-select, .price-input {
+  padding: 10px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.filter-select:focus, .price-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.product-name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.product-name a:hover {
+  color: #667eea;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 8px;
+}
+
+.product-category {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-stock {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.in-stock {
+  color: #27ae60;
+}
+
+.out-of-stock {
+  color: #e74c3c;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.add-to-cart-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.pagination-button {
+  padding: 8px 16px;
+  border: 2px solid #e9ecef;
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.pagination-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+}
+/* Cart Button States */
+.add-to-cart-button.adding {
+  background: #ffa726;
+  cursor: not-allowed;
+}
+
+.add-to-cart-button.in-cart {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  position: relative;
+}
+
+.add-to-cart-button.in-cart:before {
+  content: "✓ ";
+  margin-right: 4px;
+}
+
+.add-to-cart-button.in-cart:hover {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+}
+/* Add these styles to your ProductGrid.css file */
+
+/* Cart Controls Container */
+.cart-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+/* Quantity Controls Row */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+/* Quantity Buttons */
+.quantity-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn.decrease {
+  background: #dc3545;
+  color: white;
+}
+
+.quantity-btn.decrease:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.quantity-btn.increase {
+  background: #28a745;
+  color: white;
+}
+
+.quantity-btn.increase:hover:not(:disabled) {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.quantity-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* Quantity Display */
+.quantity-display {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #495057;
+}
+
+/* Cart Info Row */
+.cart-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.in-cart-text {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.cart-total {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover:not(:disabled) {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.remove-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Loading State */
+.add-to-cart-button.adding {
+  background: #ffc107;
+  color: #212529;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-controls {
+    padding: 8px;
+    gap: 6px;
+  }
+  
+  .quantity-controls {
+    padding: 4px;
+    gap: 6px;
+  }
+  
+  .quantity-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  .cart-info {
+    font-size: 12px;
+  }
+  
+  .remove-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Special emoji styling for delete button when quantity is 1 */
+.quantity-btn.decrease:disabled {
+  background: #dc3545;
+  opacity: 1;
+}
+
+/* Animation for quantity changes */
+.quantity-display {
+  transition: all 0.2s ease;
+}
+
+.cart-controls:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+/* Success state when item is in cart */
+.cart-controls {
+  position: relative;
+}
+
+.cart-controls:before {
+  content: "✓";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #28a745;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Add these styles to your ProductGrid.css file */
+
+/* Cart Controls Container */
+.cart-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+/* Quantity Controls Row */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+/* Quantity Buttons */
+.quantity-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn.decrease {
+  background: #dc3545;
+  color: white;
+}
+
+.quantity-btn.decrease:hover:not(:disabled) {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.quantity-btn.increase {
+  background: #28a745;
+  color: white;
+}
+
+.quantity-btn.increase:hover:not(:disabled) {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.quantity-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* Special styling for trash icon when quantity is 1 */
+.quantity-btn.decrease {
+  background: #dc3545;
+  opacity: 1;
+}
+
+/* Quantity Display */
+.quantity-display {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #495057;
+}
+
+/* Cart Info Row */
+.cart-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.in-cart-text {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.cart-total {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Loading State */
+.add-to-cart-button.adding {
+  background: #ffc107;
+  color: #212529;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-controls {
+    padding: 8px;
+    gap: 6px;
+  }
+  
+  .quantity-controls {
+    padding: 4px;
+    gap: 6px;
+  }
+  
+  .quantity-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  .cart-info {
+    font-size: 12px;
+  }
+}
+
+/* Animation for quantity changes */
+.quantity-display {
+  transition: all 0.2s ease;
+}
+
+.cart-controls:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+/* Success state when item is in cart */
+.cart-controls {
+  position: relative;
+}
+
+.cart-controls:before {
+  content: "✓";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #28a745;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-loading {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Add these styles to your existing ProductGrid.css file */
+
+/* Search Input Container with Loading Spinner */
+.search-input-container {
+  position: relative;
+  flex: 1;
+}
+
+.search-loading {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Clear Filters Button */
+.clear-filters-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.clear-filters-button:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Active Filters Display */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #e9ecef;
+  margin-top: 16px;
+}
+
+.active-filters-label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.filter-tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-tag button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.filter-tag button:hover {
+  background: #c82333;
+}
+
+/* No Products State */
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.no-products h3 {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.no-products p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .active-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-tag {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
