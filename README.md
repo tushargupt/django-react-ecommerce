@@ -69,8 +69,8 @@ A full-stack e-commerce application built with **React** (frontend) and **Django
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/ecommerce-storefront.git
-cd ecommerce-storefront
+git clone https://github.com/tushargupt/django-react-ecommerce.git
+cd django-react-ecommerce
 ```
 
 ### 2. Backend Setup
@@ -275,35 +275,6 @@ Authentication Unavailable: 4000 0027 6000 3184
 - **Toast notifications** for cart actions
 - **Status updates** for orders
 
-## 🚀 Deployment
-
-### Backend Deployment (Heroku)
-```bash
-# Install Heroku CLI
-heroku create your-app-name
-heroku addons:create heroku-postgresql:hobby-dev
-
-# Set environment variables
-heroku config:set SECRET_KEY=your-production-secret
-heroku config:set DEBUG=False
-heroku config:set STRIPE_SECRET_KEY=sk_live_your_live_key
-
-# Deploy
-git push heroku main
-heroku run python manage.py migrate
-heroku run python manage.py createsuperuser
-```
-
-### Frontend Deployment (Netlify)
-```bash
-# Build for production
-npm run build
-
-# Deploy to Netlify
-# Upload build folder or connect GitHub repository
-# Set environment variables in Netlify dashboard
-```
-
 ## 🔧 API Endpoints
 
 ### Authentication
@@ -432,7 +403,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📞 Support
 
-For support, email support@yourcompany.com or join our Slack channel.
+For support, email mail.tushar2024t@gmail.com or join our Slack channel.
 
 ---
 
